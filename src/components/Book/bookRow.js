@@ -36,7 +36,7 @@ class BookRow extends Component{
                         <span className="fa fa-edit"/>
                         <span><strong>Edit</strong></span>
                     </Link>
-                    <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onDelete(this.props.book_id)}>
+                    <button className="btn btn-sm btn-outline-danger " onClick={()=>this.props.onDelete(this.props.book_id)}>
                         <span className="fa fa-remove"/>
                         <span><strong>Remove</strong></span>
                     </button>

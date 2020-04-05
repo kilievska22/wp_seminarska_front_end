@@ -57,7 +57,7 @@ const createAuthor = (props) => {
                 <div className="form-group row">
                     <label htmlFor="biography" className="col-sm-4 offset-sm-1 text-left">Biography</label>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" id="biography" placeholder="Biography "name={"biography"}/>
+                        <textarea type="text" className="form-control" id="biography" placeholder="Biography "name={"biography"}></textarea>
                     </div>
                 </div>
 

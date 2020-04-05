@@ -79,8 +79,9 @@ console.log("bookid"+bookId);
                 <div className="form-group row">
                     <label htmlFor="amount" className="col-sm-4 offset-sm-1 text-left">Plot</label>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" id="plot" placeholder="Plot" name={"plot"}
-                               onChange={handleBookOnChange} defaultValue={book.plot}/>
+                        <textarea type="text" className="form-control w-auto" id="plot" placeholder="Plot" name={"plot"}
+                                  onChange={handleBookOnChange} defaultValue={book.plot} rows="300"  >
+                        </textarea>
                     </div>
 
                 </div>
@@ -95,7 +96,7 @@ console.log("bookid"+bookId);
                 <div className="form-group row">
                     <label htmlFor="plot" className="col-sm-4 offset-sm-1 text-left">Authors</label>
                     <div className="col-sm-6">
-                        <select name={"authors"} className="form-control" multiple={true}>
+                        <select name={"authors"} className="form-control" multiple={false}>
                             {optionsAuthors}
                         </select>
                     </div>

@@ -34,7 +34,7 @@ const Header=(props)=>{
                             <Link className="nav-link" to={"/penalties"}>Penalties</Link>
                         </li>
                     </ul>
-                    <button className="btn btn-sm btn-outline-secondary " onClick={()=>props.getUnpaid()}>
+                    <button className="btn btn-sm btn-outline-danger " onClick={()=>props.getUnpaid()}>
 
                         <span><strong>Get penalties with due date today</strong></span>
                     </button>

@@ -24,13 +24,11 @@ class EmployeeRow extends Component{
                         <span className="fa fa-edit"/>
                         <span><strong>Edit</strong></span>
                     </Link>
-                    <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onDelete(this.props.ESSN)}>
+                    <button className="btn btn-sm btn-outline-danger " onClick={()=>this.props.onDelete(this.props.ESSN)}>
                         <span className="fa fa-remove"/>
                         <span><strong>Remove</strong></span>
                     </button>
-                    <Link to={"/employees/"+this.props.ESSN+"/details"} className="btn btn-sm btn-outline-dark">
-                        <span><strong>Details</strong></span>
-                    </Link>
+
                 </td>
 
 

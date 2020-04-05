@@ -46,11 +46,11 @@ class BorrowingRow extends Component{
                 <Link to={"/penalties/"+this.props.edition.edition_id+"/add"} className="btn btn-sm btn-outline-dark text-left">
                     <span><strong>Add penalty</strong></span>
                 </Link>
-                <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onDelete(this.props.borrowingId)}>
+                <button className="btn btn-sm btn-outline-danger " onClick={()=>this.props.onDelete(this.props.borrowingId)}>
                     <span className="fa fa-remove"/>
                     <span><strong>Remove</strong></span>
                 </button>
-                <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onReturn(this.props.borrowingId)}>
+                <button className="btn btn-sm btn-outline-success " onClick={()=>this.props.onReturn(this.props.borrowingId)}>
                     <span className="fa fa-remove"/>
                     <span><strong>Return borrowing</strong></span>
                 </button>

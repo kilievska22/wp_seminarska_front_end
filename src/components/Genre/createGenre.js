@@ -43,7 +43,7 @@ const createGenre = (props) => {
                 <div className="form-group row">
                     <label htmlFor="plot" className="col-sm-4 offset-sm-1 text-left">Description</label>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" id="plot" placeholder="Description" name={"description"}/>
+                        <textarea type="text" className="form-control" id="plot" placeholder="Description" name={"description"}></textarea>
                     </div>
                 </div>
                 <div className="form-group row">

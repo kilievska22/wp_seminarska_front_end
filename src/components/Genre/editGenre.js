@@ -62,8 +62,8 @@ const GenreEdit=(props)=>{
                 <div className="form-group row">
                     <label htmlFor="amount" className="col-sm-4 offset-sm-1 text-left">Description</label>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" id="plot" placeholder="Plot" name={"description"}
-                               onChange={handleGenreOnChange} defaultValue={genre.description}/>
+                        <textarea type="text" className="form-control" id="plot" placeholder="Plot" name={"description"}
+                               onChange={handleGenreOnChange} defaultValue={genre.description} rows="100"></textarea>
                     </div>
                 </div>
                 <div className="form-group row">

@@ -37,11 +37,11 @@ class PenaltyRow extends Component{
 
                 </td>
 
-                <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onDelete(this.props.penaltyId)}>
+                <button className="btn btn-sm btn-outline-danger " onClick={()=>this.props.onDelete(this.props.penaltyId)}>
                     <span className="fa fa-remove"/>
                     <span><strong>Remove</strong></span>
                 </button>
-                <button className="btn btn-sm btn-outline-secondary " onClick={()=>this.props.onPayPenalty(this.props.penaltyId)}>
+                <button className="btn btn-sm btn-outline-success " onClick={()=>this.props.onPayPenalty(this.props.penaltyId)}>
                     <span className="fa fa-remove"/>
                     <span><strong>Pay</strong></span>
                 </button>

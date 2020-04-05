@@ -73,8 +73,8 @@ const AuthorEdit=(props)=>{
                 <div className="form-group row">
                     <label htmlFor="biography" className="col-sm-4 offset-sm-1 text-left">Biography</label>
                     <div className="col-sm-6">
-                        <input type="text" className="form-control" id="plot" placeholder="Biography" name={"biography"}
-                               onChange={handleAuthorOnChange} defaultValue={author.biography}/>
+                        <textarea type="text" className="form-control" id="plot" placeholder="Biography" name={"biography"}
+                                  onChange={handleAuthorOnChange} defaultValue={author.biography} rows="100"></textarea>
                     </div>
                 </div>
                 <div className="form-group row">
