@@ -21,11 +21,11 @@ const createEmployee = (props) => {
             "name":e.target.name.value,
 
             "working_time":e.target.working_time.value,
-            "salary":e.target.salary.value,
+            "salary":e.target.salary.amount.value,
             "position":e.target.position.value,
             "phone":e.target.phone.value,
             "email":e.target.email.value,
-            "ESSN":e.target.ESSN.value
+           // "ESSN":e.target.ESSN.value
 
 
 

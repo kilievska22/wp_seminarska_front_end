@@ -20,14 +20,16 @@ class PenaltyRow extends Component{
                 </td>
                 <td scope="col">
 
-                    <span>{this.props.price}</span>
+                    <span>{this.props.price.currency}</span>
+                    <span>{this.props.price.amount}</span>
+
 
                 </td>
 
 
                 <td scope="col">
 
-                    <span>{this.props.borrowing.borrowingId}</span>
+                    <span>{this.props.borrowing.id.id}></span>
 
                 </td>
 

@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5e32cc45-c0b0-4673-aed2-bc7259bb95d2" name="Default Changelist" comment="" />
+    <list default="true" id="5e32cc45-c0b0-4673-aed2-bc7259bb95d2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Authors/createAuthor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Authors/createAuthor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Authors/editAuthor.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Authors/editAuthor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Book/Details.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Book/Details.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Book/createBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Book/createBook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Book/editBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Book/editBook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Borrowing/borrowingRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Borrowing/borrowingRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Borrowing/createBorrowing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Borrowing/createBorrowing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Employee/createEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Employee/createEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Employee/editEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Employee/editEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Employee/employeeRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Employee/employeeRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Member/editMember.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Member/editMember.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Penalty/createPenalty.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Penalty/createPenalty.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Penalty/penaltyRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Penalty/penaltyRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/custom-axios/axios.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/custom-axios/axios.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/axiosAuthorsRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/axiosAuthorsRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/axiosBooksRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/axiosBooksRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/borrowingsAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/borrowingsAxiosRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/editionsAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/editionsAxiosRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/employeesAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/employeesAxiosRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/genresAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/genresAxiosRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/membersAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/membersAxiosRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/penaltiesAxiosRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/penaltiesAxiosRepository.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +65,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/wp_2020_seminarska/lab-3" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v10.16.0-win-x64/node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
@@ -115,6 +144,7 @@
       <workItem from="1584349976522" duration="245000" />
       <workItem from="1585316013049" duration="650000" />
       <workItem from="1585578725475" duration="9003000" />
+      <workItem from="1604089650662" duration="24168000" />
     </task>
     <servers />
   </component>
@@ -126,7 +156,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

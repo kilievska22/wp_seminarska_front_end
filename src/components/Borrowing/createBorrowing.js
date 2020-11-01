@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import axios from '../../custom-axios/axios'
+import axios from '../../custom-axios/axios1'
 
 import {Redirect, useHistory, useParams} from 'react-router-dom';
 import MemberRow from "../Member/memberRow";
@@ -59,12 +59,12 @@ console.log("E"+editionId);
     }
     const  optionsEmployees =employees.map((employee, index) => {
         return (
-            <option value={employee.essn}>{employee.name}</option>
+            <option value={employee.id.id}>{employee.name}</option>
         );
     });
     const  optionsMembers =members.map((member, index) => {
         return (
-            <option value={member.essn}>{member.name}</option>
+            <option value={member.id.id}>{member.name}</option>
         );
     });
     return(

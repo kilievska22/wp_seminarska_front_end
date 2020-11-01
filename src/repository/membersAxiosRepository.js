@@ -1,4 +1,4 @@
-import axios from '../custom-axios/axios'
+import axios from '../custom-axios/axios1'
 import qs from 'qs'
 const MembersService={
     fetchMembersPaged:(page, pageSize)=>{
@@ -14,7 +14,14 @@ const MembersService={
         return axios.delete(`/members/${id}`);
     },
     editMember:(member)=>{
-        const formParams=qs.stringify(member);
+
+            const name=member.name;
+        const  membership_start=member.membership_start;
+        const membership_expiration=member.membership_expiration;
+        const email=member.email;
+        const phone=member.phone;
+        const member1={name,membership_start,membership_expiration,email,phone}
+        const formParams=qs.stringify(member1);
 
         const id=member.ESSN;
         return axios.patch(`/members/${id}`, formParams);

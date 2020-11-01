@@ -24,7 +24,14 @@ const BooksService={
         return axios.delete(`/books/${id}`);
     },
     editBook:(book)=>{
-        const formParams=qs.stringify(book);
+
+        const title= book.title;
+
+           const plot= book.plot;
+            const genre=book.genre;
+            const authors=book.authors;
+            const b1={title, plot, genre, authors};
+        const formParams=qs.stringify(b1);
 
         const id=book.book_id;
         return axios.patch(`/books/${id}`, formParams);

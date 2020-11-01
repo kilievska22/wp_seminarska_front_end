@@ -1,4 +1,4 @@
-import axios from '../custom-axios/axios'
+import axios from '../custom-axios/axios1'
 import qs from 'qs'
 const PenaltiesService={
     fetchPenaltiesPaged:(page, pageSize)=>{

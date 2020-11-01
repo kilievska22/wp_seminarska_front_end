@@ -19,31 +19,31 @@ class BorrowingRow extends Component{
 
                 </td>
                 <td scope="col">
-                    <Link to={"/books/"+this.props.edition.book.book_id+"/details"}>
-                        <span>{this.props.edition.book.title}</span>
+                    <Link to={"/books/"+this.props.edition.book.id+"/details"}>
+                        <span>{this.props.edition.book.id}</span>
                     </Link>
 
                 </td>
                 <td scope="col">
 
-                        <span>{this.props.edition.edition_id}</span>
+                        <span>{this.props.edition.id.id}</span>
 
                 </td>
                 <td scope="col">
 
-                        <span>{this.props.employee.essn}</span>
+                        <span>{this.props.employee.id.id}</span>
 
 
                 </td>
                 <td scope="col">
 
-                    <span>{this.props.member.essn}</span>
+                    <span>{this.props.member.id.id}</span>
 
 
                 </td>
 
                 <td>{checked}  </td>
-                <Link to={"/penalties/"+this.props.edition.edition_id+"/add"} className="btn btn-sm btn-outline-dark text-left">
+                <Link to={"/penalties/"+this.props.borrowingId+"/add"} className="btn btn-sm btn-outline-dark text-left">
                     <span><strong>Add penalty</strong></span>
                 </Link>
                 <button className="btn btn-sm btn-outline-danger " onClick={()=>this.props.onDelete(this.props.borrowingId)}>

@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import axios from '../../custom-axios/axios'
+import axios from '../../custom-axios/axios1'
 
 import {Redirect, useHistory, useParams} from 'react-router-dom';
 import MemberRow from "../Member/memberRow";

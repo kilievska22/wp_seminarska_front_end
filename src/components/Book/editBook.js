@@ -56,12 +56,12 @@ console.log("bookid"+bookId);
 
     const  options =genresAdd.map((genre, index) => {
         return (
-            <option value={genre.genre_id}>{genre.title}</option>
+            <option value={genre.id.id}>{genre.title}</option>
         );
     });
     const  optionsAuthors =authorsAdd.map((author, index) => {
         return (
-            <option value={author.authorId}>{author.name}</option>
+            <option value={author.id.id}>{author.name}</option>
         );
     });
 

@@ -1,4 +1,4 @@
-import axios from '../custom-axios/axios'
+import axios from '../custom-axios/axios1'
 import qs from 'qs'
 const EmployeesService={
     fetchEmployeesPaged:(page, pageSize)=>{
@@ -14,7 +14,16 @@ const EmployeesService={
         return axios.delete(`/employees/${id}`);
     },
     editEmployee:(employee)=>{
-        const formParams=qs.stringify(employee);
+
+
+        const name=employee.name;
+        const working_time=employee.working_time;
+        const salary=employee.salary;
+        const position=employee.position;
+        const phone=employee.phone;
+        const email=employee.email;
+        const employee1={name, working_time,salary,position,phone,email}
+        const formParams=qs.stringify(employee1);
 
         const id=employee.ESSN;
         return axios.patch(`/employees/${id}`, formParams);

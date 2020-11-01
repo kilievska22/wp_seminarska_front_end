@@ -1,6 +1,8 @@
 import React,{useState,useEffect, Component} from 'react'
 import {useParams, useHistory, Link} from 'react-router-dom';
 import axios from '../../custom-axios/axios'
+import axios1 from '../../custom-axios/axios1'
+
 
 
 
@@ -9,6 +11,7 @@ import axios from '../../custom-axios/axios'
 const details=(props)=>{
     // const [ingredient,setIngredient] = useState({});
     const [book, setBook]=useState([]);
+    const [editions, setEditions]=useState([]);
 
 
     const {bookId} = useParams();
@@ -24,7 +27,11 @@ const details=(props)=>{
 
 
         });
+        axios1.get("/editions/"+bookId).then((data)=>{
+            console.log("editions"+data.data.content);
+            setEditions(data.data);
 
+        });
 
 
 
@@ -39,19 +46,20 @@ const details=(props)=>{
     let editionsAdd=null;
     let currEditions=null;
     console.log(book);
-    if(props.editions!==undefined){
-         currEditions=props.editions.filter((edition)=>edition.book.book_id==bookId);
+    if(editions!==undefined){
+         /*currEditions=props.editions.filter((edition)=>edition.book.book_id==bookId);
 console.log(currEditions);
-console.log(bookId);
-        editionsAdd =currEditions.map((edition, index) => {
+console.log(bookId);*/
+         console.log(editions);
+        editionsAdd =editions.map((edition, index) => {
             let checked=edition.free? "true":"false";
             return (
                 <tr >
-                    <td>{edition.edition_id}</td>
+                    <td>{edition.id.id}</td>
                     <td>{edition.num_pages}</td>
                     <td>{checked} </td>
                     <td>
-                        <Link to={"/borrowings/"+edition.edition_id+"/add"} className="btn btn-sm btn-outline-dark text-left">
+                        <Link to={"/borrowings/"+edition.id.id+"/add"} className="btn btn-sm btn-outline-dark text-left">
                             <span><strong>Borrow</strong></span>
                         </Link>
 

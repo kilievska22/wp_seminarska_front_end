@@ -8,7 +8,9 @@ import AuthorsService from '../../repository/axiosAuthorsRepository';
 import EmployeesService from '../../repository/employeesAxiosRepository';
 import MembersService from '../../repository/membersAxiosRepository';
 import GenresService from '../../repository/genresAxiosRepository';
-
+import loggingService from "../../repository/loggingAxiosRepository";
+import SignIn from '../security/sign-in';
+import SignUp from '../security/sign-up';
 
 
 
@@ -68,6 +70,8 @@ class App extends  Component{
   constructor(props) {
     super(props);
     this.state = {
+      currentUser: null,
+
       columnsBorrowings: [],
       columnsGenres:[],
       columnsAuthors:[],
@@ -629,7 +633,7 @@ console.log("stateee"+this.state.totalPagesBorrowings);
     GenresService.deleteGenre(name).then((response)=>{
       this.setState((state) => {
         const genres = state.genres.filter((i) => {
-          return i.genre_id !== i.genre_id;
+          return i.id.id !== i.id.id;
         });
         return {genres}
       })
@@ -665,7 +669,7 @@ console.log("stateee"+this.state.totalPagesBorrowings);
       this.setState((prevState) => {
         const newGenreRef = prevState.genres.filter((item)=>{
 
-          if (item.genre_id===newGenre.genre_id) {
+          if (item.id.id===newGenre.id.id){
             return newGenre;
           }
           return item;
@@ -677,7 +681,31 @@ console.log("stateee"+this.state.totalPagesBorrowings);
     });
   });
 
+  createUser = (newUser) => {
+    loggingService.addUser(newUser).then((response)=>{
+      const newGenre = response.data;
+      /*this.setState((prevState) => {
+        const newGenreRef = [...prevState.genre, newGenre];
 
+        return {
+          "genres": newGenreRef
+        }
+      });*/
+    });
+  };
+  createLogin = (newUser) => {
+    loggingService.registerUser(newUser).then((response)=>{
+      const newGenre = response;
+      console.log("response", newGenre)
+      /*this.setState((prevState) => {
+        const newGenreRef = [...prevState.genre, newGenre];
+
+        return {
+          "genres": newGenreRef
+        }
+      });*/
+    });
+  };
 
 
 
@@ -688,7 +716,7 @@ console.log(this.state.totalPages);
     const   books =this.state.books.map((book, index) => {
       return (
           <BookRow  title={book.title} genre={book.genre} key={index}
-                    plot={book.plot}  num_editions={book.num_editions } onDelete={this.deleteBook} book_id={book.book_id} authors={book.authors}/>
+                    plot={book.plot}  num_editions={book.num_editions } onDelete={this.deleteBook} book_id={book.id.id} authors={book.authors}/>
       );
     });
     const handlePageClick = (e) => {
@@ -724,7 +752,7 @@ console.log(this.state.totalPages);
     const   borrowings =this.state.borrowings.map((borrowing, index) => {
       return (
           <BorrowingRow  from={borrowing.from} to={borrowing.to} key={index}
-                    member={borrowing.member}  edition={borrowing.edition } onDelete={this.deleteBorrowing} borrowingId={borrowing.borrowingId} employee={borrowing.employee}
+                    member={borrowing.member}  edition={borrowing.edition } onDelete={this.deleteBorrowing} borrowingId={borrowing.id.id} employee={borrowing.employee}
           active={borrowing.active} onReturn={this.returnBorrowing}/>
       );
     });
@@ -761,7 +789,7 @@ console.log(this.state.totalPages);
     const   penalties =this.state.penalties.map((penalty, index) => {
       return (
           <PenaltyRow  givenAt={penalty.givenAt} dueDate={penalty.dueDate} key={index}
-                         price={penalty.price}  paid={penalty.paid } onDelete={this.deletePenalty} penaltyId={penalty.penaltyId} borrowing={penalty.borrowing}
+                         price={penalty.price}  paid={penalty.paid } onDelete={this.deletePenalty} penaltyId={penalty.id.id} borrowing={penalty.borrowing}
                   onPayPenalty={this.payPenalty}     />
       );
     });
@@ -798,7 +826,7 @@ console.log(this.state.totalPages);
     const   authors =this.state.authors.map((author, index) => {
       return (
           <AuthorRow  name={author.name} date_of_birth={author.date_of_birth} key={index}
-                    biography={author.biography}   onDelete={this.deleteAuthor} authorId={author.authorId} />
+                    biography={author.biography}   onDelete={this.deleteAuthor} authorId={author.id.id} />
       );
     });
     const handlePageClickAuthors = (e) => {
@@ -834,7 +862,7 @@ console.log(this.state.totalPages);
     //employees
     const   employees =this.state.employees.map((employee, index) => {
       return (
-          <EmployeeRow ESSN={employee.essn} name={employee.name} working_time={employee.working_time} key={index}
+          <EmployeeRow ESSN={employee.id.id} name={employee.name} working_time={employee.working_time} key={index}
                       salary={employee.salary}   onDelete={this.deleteEmployee} position={employee.position}  phone={employee.phone}
           email={employee.email}/>
       );
@@ -871,7 +899,7 @@ console.log(this.state.totalPages);
 ///////members///////////////////
     const   members =this.state.members.map((member, index) => {
       return (
-          <MemberRow ESSN={member.essn} name={member.name} membership_start={member.membership_start} key={index}
+          <MemberRow ESSN={member.id.id} name={member.name} membership_start={member.membership_start} key={index}
                        membership_expiration={member.membership_expiration}   onDelete={this.deleteMember}
                        email={member.email}  phone={member.phone}/>
       );
@@ -910,9 +938,11 @@ console.log(this.state.totalPages);
 
 
     const   genres =this.state.genres.map((genre, index) => {
+      console.log("genre"+genre);
+      const id=genre.id.id;
       return (
           <GenreRow  title={genre.title} description={genre.description} key={index}
-                    period={genre.period}   onDelete={this.deleteGenre} genre_id={genre.genre_id}  />
+                    period={genre.period}   onDelete={this.deleteGenre} genre_id={id}  />
       );
     });
     const handlePageClickGenre = (e) => {
@@ -1193,7 +1223,7 @@ console.log(this.state.totalPages);
               <Route path={"/genres/add"} render={()=><CreateGenre onNewTermAdded={this.createGenre}/>}></Route>
 
               <Route path="/genres/:genreId/edit" render={()=>
-                  <EditGenre onSubmit={this.editGenres}/>}>
+                  <EditGenre onSubmit={this.editGenre}/>}>
               </Route>
 
               <Route path="/genres/:genreId/details" render={()=>
@@ -1287,6 +1317,9 @@ console.log(this.state.totalPages);
 
 
               <Redirect to={"/penalties"}/>
+              <Route path={"/users/signup"} render={()=><SignUp onNewTermAdded={this.createUser}/>}></Route>
+              <Route path={"/users/login"} render={()=><SignIn onNewTermAdded={this.createLogin}/>}></Route>
+
 
 
 

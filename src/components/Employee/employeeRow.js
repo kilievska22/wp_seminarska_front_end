@@ -12,7 +12,8 @@ class EmployeeRow extends Component{
 
                 <td scope="col">{this.props.name}</td>
                 <td scope="col">{this.props.working_time}</td>
-                <td scope="col">{this.props.salary}</td>
+                <td scope="col"><span>{this.props.salary.currency}</span>
+                    <span>{this.props.salary.amount}</span></td>
                 <td scope="col">{this.props.position}</td>
                 <td scope="col">{this.props.phone}</td>
                 <td scope="col">{this.props.email}</td>

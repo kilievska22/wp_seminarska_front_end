@@ -14,7 +14,14 @@ const AuthorsService={
         return axios.delete(`/authors/${id}`);
     },
     editAuthor:(author)=>{
-        const formParams=qs.stringify(author);
+
+
+           const  name=author.name;
+        const date_of_birth=author.date_of_birth;
+        const biography=author.biography;
+        const genre=author.genre;
+        const author1={name, date_of_birth, biography,genre}
+        const formParams=qs.stringify(author1);
 
         const id=author.authorId;
         return axios.patch(`/authors/${id}`, formParams);

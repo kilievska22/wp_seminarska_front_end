@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import {useParams, useHistory} from 'react-router-dom';
-import axios from '../../custom-axios/axios'
+import axios from '../../custom-axios/axios1'
 
 const MemberEdit=(props)=>{
     const [member,setMember] = useState({});

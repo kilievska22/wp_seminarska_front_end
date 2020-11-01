@@ -5,7 +5,9 @@ const Header=(props)=>{
     return(
         <header style={{backgroundColor: "lavender"}}>
             <nav className="navbar navbar-expand-md navbar-light navbar-fixed" >
-                <Link className="navbar-brand" to={"/index"}>Home</Link>
+                <Link className="navbar-brand" to={"/users/signup"}>sign up</Link><br/>
+                <Link className="navbar-brand" to={"/users/login"}>login</Link><br/>
+
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
                         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"/>

@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 
 import {Redirect, useHistory} from 'react-router-dom';
+import axios from "../../custom-axios/axios";
 const createAuthor = (props) => {
 
     const history = useHistory();
@@ -13,7 +14,11 @@ const createAuthor = (props) => {
         if(paramValue===""){setDisabledButton(true); }
         //setIngredient({paramName:paramValue});
         else{setDisabledButton(false);}
-    }
+    };
+    useEffect(() => {
+        axios.get("/genres").then((data)=> {
+            setGenres(data.data.content);
+        })},[])
     const onFormSubmit = (e) => {
 
         e.preventDefault();
@@ -34,7 +39,7 @@ const createAuthor = (props) => {
     };
     const  options =genresAdd.map((genre, index) => {
         return (
-            <option value={genre.genre_id}>{genre.title}</option>
+            <option value={genre.id.id}>{genre.title}</option>
         );
     });
     return(

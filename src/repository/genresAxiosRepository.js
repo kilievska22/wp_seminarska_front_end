@@ -26,9 +26,15 @@ const GenresService={
         return axios.delete(`/genres/${id}`);
     },
     editGenre:(genre)=>{
-        const formParams=qs.stringify(genre);
-
+        const title=genre.title;
+        const period=genre.period;
+        const description=genre.description;
+        const genre1={title,period,description}
+        const formParams=qs.stringify(genre1);
+       console.log(genre.title)
         const id=genre.genre_id;
+        const id1=JSON.stringify(id);
+        console.log(id);
         return axios.patch(`/genres/${id}`, formParams);
 
     },

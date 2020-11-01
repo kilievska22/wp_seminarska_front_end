@@ -53,7 +53,7 @@ const AuthorEdit=(props)=>{
 
     const  options =genresAdd.map((genre, index) => {
         return (
-            <option value={genre.genre_id}>{genre.title}</option>
+            <option value={genre.id.id}>{genre.title}</option>
         );
     });
 
